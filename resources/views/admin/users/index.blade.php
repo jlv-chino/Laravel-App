@@ -8,6 +8,30 @@
 </head>
 <body>
     <h1>Página principal del administrador</h1>
+
+    <table width="600" border="1">
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Role Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Email</th>
+            <th scope="col">Creado</th>
+            <th scope="col">Actualizado</th>
+        </tr>
+
+        @if ($users)
+         @foreach ($users as $user)
+           <tr>
+            <td>{{$user->id}}</td>
+            <td>{{$user->role_id}}</td>
+            <td>{{$user->name}}</td>
+            <td>{{$user->email}}</td>
+            <td>{{$user->created_at}}</td>
+            <td>{{$user->updated_at}}</td>
+           </tr>  
+         @endforeach   
+        @endif
+    </table>
     
 </body>
 </html>
