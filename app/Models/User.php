@@ -20,6 +20,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role_id',
+        'foto',
     ];
 
     /**
@@ -43,5 +45,9 @@ class User extends Authenticatable
 
     public function role(){
         return $this->belongsTo('App\Models\Role');
+    }
+
+    public function foto(){
+        return $this->belongsTo('App\Models\Foto');
     }
 }
