@@ -9,7 +9,7 @@
 <body>
     <h1>Página para agregar usuarios</h1>
 
-    {!! Form::open(['method' => 'POST', 'action' => 'AdminUsersController@store']) !!}
+    {!! Form::open(['method' => 'POST', 'action' => 'AdminUsersController@store', 'files' => true]) !!}
         <table>
             <tr>
                 <td>
