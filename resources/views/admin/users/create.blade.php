@@ -53,10 +53,10 @@
             </tr>
             <tr>
                 <td>
-                 {!!Form::label('foto', 'Foto: ')!!}
+                 {!!Form::label('foto_id', 'Foto: ')!!}
                 </td>
                 <td>
-                 {!!Form::file('ruta_foto')!!}
+                 {!!Form::file('foto_id')!!}
                 </td>
             </tr>
 

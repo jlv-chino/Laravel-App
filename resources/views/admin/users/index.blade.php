@@ -12,6 +12,7 @@
     <table width="600" border="1">
         <tr>
             <th scope="col">Id</th>
+            <th scope="col">Foto:</th>
             <th scope="col">Role Id</th>
             <th scope="col">Nombre</th>
             <th scope="col">Email</th>
@@ -23,6 +24,11 @@
          @foreach ($users as $user)
            <tr>
             <td>{{$user->id}}</td>
+            @if ($user->foto)
+             <td><img src="/images/{{$user->foto->ruta_foto}}" width="40px"/></td> 
+             @else
+             <td>Sin foto</td>    
+            @endif
             <td>{{$user->role_id}}</td>
             <td>{{$user->name}}</td>
             <td>{{$user->email}}</td>
