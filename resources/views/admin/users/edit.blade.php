@@ -12,6 +12,14 @@
     {!! Form::model($user, ['method' => 'PATCH', 'action' => ['AdminUsersController@update', $user->id], 'files' => true]) !!}
     <table>
         <tr>
+            <td><img src="/images/{{$user->foto ? $user->foto->ruta_foto : 'generico.jpg'}}" width="80px"/></td>        
+        </tr>
+        <tr>
+            <td colspan="2">
+             {!!Form::file('foto_id')!!}
+            </td>
+        </tr>
+        <tr>
             <td>
              {!!Form::label('name', 'Nombre: ')!!}
             </td>
@@ -45,15 +53,6 @@
         </tr>
         <tr>
             <td>
-             {!!Form::label('foto_id', 'Foto: ')!!}
-            </td>
-            <td>
-             {!!Form::file('foto_id')!!}
-            </td>
-        </tr>
-
-        <tr>
-            <td>
              {!!Form::submit('Actualizar Usuario')!!}
             </td>
             <td>
@@ -61,6 +60,16 @@
             </td>
         </tr> 
     </table>
+{!! Form::close() !!}
+
+{!! Form::model($user, ['method' => 'DELETE', 'action' => ['AdminUsersController@destroy', $user->id]]) !!}
+<table>
+    <tr>
+        <td>
+           {!!Form::submit('Eliminar Usuario')!!} 
+        </td>
+    </tr>   
+</table>    
 {!! Form::close() !!}
     
 </body>

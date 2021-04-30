@@ -24,11 +24,7 @@
          @foreach ($users as $user)
            <tr>
             <td>{{$user->id}}</td>
-            @if ($user->foto)
-             <td><img src="/images/{{$user->foto->ruta_foto}}" width="80px"/></td> 
-             @else
-             <td><img src="/images/generico.jpg" width="80px"</td>    
-            @endif
+            <td><img src="/images/{{$user->foto ? $user->foto->ruta_foto : 'generico.jpg'}}" width="80px"/></td> 
             <td>{{$user->role_id}}</td>
 
             <td><a href="{{route('users.edit', $user->id)}}">{{$user->name}}</a></td>
