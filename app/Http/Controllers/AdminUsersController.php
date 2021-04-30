@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Foto;
+use Illuminate\Support\Facades\Session;
 
 class AdminUsersController extends Controller
 {
@@ -128,6 +129,8 @@ class AdminUsersController extends Controller
         $user = User::findOrFail($id);
 
         $user->delete();
+
+        Session::flash('usuario_borrado', 'Usuario eliminado!!!');
 
         return redirect('admin/users');
         
